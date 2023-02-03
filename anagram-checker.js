@@ -1,13 +1,17 @@
 module.exports = function (str, str2) {
-  let wordOneReplaced=str.replace(" ","");
-  let wordTwoReplaced=str.replace(" ","");
-   wordOneReplaced = str.replace(/[^\w]/g).toLowerCase();
-   wordTwoReplaced = str2.replace(/[^\w]/g).toLowerCase();
-  let stringOne = wordOneReplaced.split("").sort().join("");
-  let stringTwo = wordTwoReplaced.split("").sort().join("");
-  if (stringOne === stringTwo) {
+ 
+    let n1 = str1.length;
+    let n2 = str2.length;
+
+    if (n1 != n2)
+        return false;
+  
+    str1.sort();
+    str2.sort()
+   
+    for (let i = 0; i < n1; i++)
+        if (str1[i] != str2[i])
+            return false;
+   
     return true;
-  } else {
-    return false;
-  }
 }
